@@ -1,0 +1,10 @@
+province,main_repository,bantustan_burden,bantustan_names,digitisation_score,physical_vulnerability_score,budget_score,staff_capacity_score,fire_incidents_since_2020,undigitised_volume_score,special_risk_flag,digitisation_risk,budget_risk,staff_risk,composite_risk_score,risk_score_10,risk_tier
+Eastern Cape,EC Archives Repository (Bhisho + Makhanda) + Transkei Archives (Mthatha),2,Transkei + Ciskei (private hands),1,5,1,1,3,5,Ciskei archives inaccessible (private hands),5,5,5,5.2,10.0,Critical Risk
+Limpopo,"Limpopo Provincial Archives (Polokwane) — incl. Lebowa, Gazankulu, Venda",3,Lebowa + Gazankulu + Venda,1,4,1,1,0,5,Lebowa archives undigitised heap in basement — Lebowakgomo,5,5,5,5.0,9.5,Critical Risk
+North West,North West Provincial Archives (Mafikeng) — incl. Bophuthatswana,1,Bophuthatswana,2,3,1,2,0,4,Post-fiscal crisis — archives budget not ring-fenced,4,5,4,3.95,7.0,Critical Risk
+Mpumalanga,Mpumalanga Archives (Nelspruit) — incl. KaNgwane + KwaNdebele (partial),2,KaNgwane + KwaNdebele (partial),2,3,1,2,0,3,KwaNdebele archive location unknown,4,5,4,3.85,6.7,Critical Risk
+KwaZulu-Natal,KZN Archives Repository (Pietermaritzburg) + KwaZulu Archives (Ulundi),1,KwaZulu,2,3,2,2,0,4,KwaZulu archives (Ulundi) separately under-resourced,4,4,4,3.8,6.6,Critical Risk
+Free State,Free State Archives (Bloemfontein) — incl. Qwaqwa,1,Qwaqwa,2,2,2,2,0,3,None,4,4,4,3.3,5.4,Moderate Risk
+Northern Cape,Northern Cape Archives (Kimberley),0,None,2,2,2,2,0,2,None,4,4,4,3.0,4.6,Moderate Risk
+Gauteng,National Archives Repository (Pretoria),0,None,3,2,3,3,0,3,None,3,3,3,2.7,3.9,Moderate Risk
+Western Cape,Cape Town Archives Repository (Cape Town),0,None,5,1,5,4,1,1,None,1,1,2,1.1,0.0,Lower Risk
