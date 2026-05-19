@@ -108,7 +108,7 @@ st.markdown("""
   /* ── Section divider ── */
   .divider {
     border: none;
-    border-top: 1px solid #D6D3D1;
+    border-top: 1.5px solid #D6D3D1;
     margin: 36px 0;
   }
 
@@ -116,7 +116,7 @@ st.markdown("""
   .stat-row { display: flex; gap: 16px; flex-wrap: wrap; margin: 24px 0; }
   .stat-card {
     background: white;
-    border: 1px solid #E7E5E4;
+    border: 1.5px solid #E7E5E4;
     border-radius: 10px;
     padding: 22px 26px;
     flex: 1; min-width: 160px;
@@ -165,7 +165,7 @@ st.markdown("""
   /* ── Methodology note ── */
   .method-note {
     background: #FAFAF9;
-    border: 1px solid #E7E5E4;
+    border: 1.5px solid #E7E5E4;
     border-radius: 8px;
     padding: 16px 20px;
     font-family: 'JetBrains Mono', monospace;
