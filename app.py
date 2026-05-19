@@ -77,7 +77,7 @@ st.markdown("""
     position: absolute;
     top: 0; right: 0;
     width: 300px; height: 100%;
-    background: linear-gradient(135deg, transparent 0%, rgba(217,119,6,0.08) 100%);
+    /*background: linear-gradient(135deg, transparent 0%, rgba(217,119,6,0.08) 100%);*/
     pointer-events: none;
   }
   .hero-date {
