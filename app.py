@@ -13,15 +13,15 @@ st.markdown("""
 
   /* ── Base ── */
   [data-testid="stAppViewContainer"] {
-    background: #F7F3EE;
+    background: #F0EAD6;
     font-family: 'Source Serif 4', Georgia, serif;
   }
   [data-testid="stSidebar"] {
-    background: #1C1917;
-    border-right: 1px solid #292524;
+    background: #F5F0EB;
+    border-right: 1px solid #E0DED9;
   }
-  [data-testid="stSidebar"] * { color: #D6D3D1 !important; }
-  [data-testid="stSidebar"] a { color: #F59E0B !important; }
+  [data-testid="stSidebar"] * { color: #3F3F3F !important; }
+  [data-testid="stSidebar"] a { color: #D97706 !important; }
 
   /* ── Typography ── */
   h1 { font-family: 'Playfair Display', Georgia, serif !important;

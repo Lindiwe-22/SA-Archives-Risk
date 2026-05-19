@@ -391,7 +391,7 @@ st.markdown("""
 st.markdown("""
 <div style="text-align:center; padding:20px 0 8px; color:#A8A29E;
             font-size:12px; font-family:'JetBrains Mono',monospace;">
-  Analysis: Lindiwe Songelwa · 2026 · Public Interest Data Science<br>
+  Analysis: Lindiwe Songelwa · 2026 · Public Inte Data Science<br>
   Sources: NARSSA · DSAC · UCT APC Research Initiative · Wits HPRA ·
   SA Society of Archivists · accesstomemory.org · PMG
 </div>
