@@ -64,7 +64,7 @@ st.markdown("""
 
   /* ── Hero ── */
   .hero {
-    background: linear-gradient(135deg, #1C1917 0%, #292524 60%, #3B2A1A 100%);
+    /*background: linear-gradient(135deg, #1C1917 0%, #292524 60%, #3B2A1A 100%);*/
     border-radius: 12px;
     padding: 56px 48px 48px;
     margin-bottom: 36px;
