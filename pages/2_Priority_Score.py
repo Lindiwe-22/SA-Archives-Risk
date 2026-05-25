@@ -120,15 +120,15 @@ st.markdown('<hr class="divider">', unsafe_allow_html=True)
 st.markdown("## Priority Intervention Summary")
 
 for _, row in df_p.iterrows():
-    rank  = row['priority_rank']
+    rank  = int(row['priority_rank'])
     tier  = row['risk_tier']
     color = TIER_COLORS[tier]
 
-    rank_bg = '#FEF2F2' if rank <= 2 else '#FEF3C7' if rank <= 5 else '#F0FDF4'
+    rank_bg     = '#FEF2F2' if rank <= 2 else '#FEF3C7' if rank <= 5 else '#F0FDF4'
     rank_border = '#DC2626' if rank <= 2 else '#D97706' if rank <= 5 else '#16A34A'
 
     urgency_note = (
-        f"🔥 {int(row['fire_incidents_since_2020'])} fire incident(s) since 2020 — urgency elevated"
+        "🔥 " + str(int(row['fire_incidents_since_2020'])) + " fire incident(s) since 2020 — urgency elevated"
         if row['fire_incidents_since_2020'] > 0
         else "No confirmed fire incidents since 2020"
     )
@@ -141,57 +141,54 @@ for _, row in df_p.iterrows():
     special = '' if special.strip() in ('', 'None', 'nan', 'NaN') else special
 
     special_html = (
-        f'<div style="font-size:12.5px; color:#92400E; margin-top:8px; '
-        f'background:#FEF3C7; padding:8px 12px; border-radius:4px;">⚠️ {special}</div>'
-        if special else ''
-    )
+        '<div style="font-size:12.5px;color:#92400E;margin-top:8px;'
+        'background:#FEF3C7;padding:8px 12px;border-radius:4px;">⚠️ ' + special + '</div>'
+    ) if special else ''
 
     bantustan_val = int(row['bantustan_burden'])
     risk_val      = row['risk_score_10']
     priority_val  = row['priority_score']
-    province_name = row['province']
-    repository    = row['main_repository']
+    province_name = str(row['province'])
+    repository    = str(row['main_repository'])
 
-    st.markdown(f"""
-<div style="background:white; border:1px solid #E7E5E4; border-radius:10px;
-            padding:22px 26px; margin-bottom:14px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-  <div style="display:flex; align-items:flex-start; gap:20px; flex-wrap:wrap;">
-    <div style="min-width:80px;">
-      <div style="background:{rank_bg}; border:2px solid {rank_border};
-                  border-radius:50%; width:60px; height:60px;
-                  display:flex; align-items:center; justify-content:center;
-                  font-family:'Playfair Display',serif;
-                  font-size:24px; font-weight:900; color:{rank_border};">
-        #{rank}
-      </div>
-    </div>
-    <div style="flex:1; min-width:220px;">
-      <div style="font-family:'Playfair Display',serif; font-size:18px;
-                  font-weight:700; color:#1C1917; margin-bottom:4px;">
-        {province_name}
-      </div>
-      <div style="font-family:'JetBrains Mono',monospace; font-size:11px;
-                  color:{color}; margin-bottom:10px;">
-        {tier} · Risk {risk_val}/10 · Priority {priority_val}/10
-      </div>
-      <div style="font-size:13.5px; color:#57534E; margin-bottom:6px;">
-        📦 {repository}
-      </div>
-      <div style="font-size:13px; color:#DC2626; margin-bottom:4px;">{urgency_note}</div>
-      <div style="font-size:13px; color:#44403C;">{feasibility_note}</div>
-      {special_html}
-    </div>
-    <div style="min-width:120px; text-align:right;">
-      <div style="font-family:'JetBrains Mono',monospace; font-size:10px;
-                  color:#78716C; margin-bottom:4px;">BANTUSTAN BURDEN</div>
-      <div style="font-family:'Playfair Display',serif; font-size:28px;
-                  font-weight:900; color:#1C1917;">{bantustan_val}</div>
-      <div style="font-size:11px; color:#A8A29E;">former archives</div>
-    </div>
-  </div>
-</div>
-""", unsafe_allow_html=True)
+    card = (
+        '<div style="background:white;border:1px solid #E7E5E4;border-radius:10px;'
+        'padding:22px 26px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,0.05);">'
+        '<div style="display:flex;align-items:flex-start;gap:20px;flex-wrap:wrap;">'
+
+        '<div style="min-width:80px;">'
+        '<div style="background:' + rank_bg + ';border:2px solid ' + rank_border + ';'
+        'border-radius:50%;width:60px;height:60px;'
+        'display:flex;align-items:center;justify-content:center;'
+        'font-size:24px;font-weight:900;color:' + rank_border + ';">'
+        '#' + str(rank) +
+        '</div></div>'
+
+        '<div style="flex:1;min-width:220px;">'
+        '<div style="font-size:18px;font-weight:700;color:#1C1917;margin-bottom:4px;">'
+        + province_name +
+        '</div>'
+        '<div style="font-size:11px;color:' + color + ';margin-bottom:10px;">'
+        + tier + ' · Risk ' + str(risk_val) + '/10 · Priority ' + str(priority_val) + '/10'
+        '</div>'
+        '<div style="font-size:13.5px;color:#57534E;margin-bottom:6px;">'
+        '📦 ' + repository +
+        '</div>'
+        '<div style="font-size:13px;color:#DC2626;margin-bottom:4px;">' + urgency_note + '</div>'
+        '<div style="font-size:13px;color:#44403C;">' + feasibility_note + '</div>'
+        + special_html +
+        '</div>'
+
+        '<div style="min-width:120px;text-align:right;">'
+        '<div style="font-size:10px;color:#78716C;margin-bottom:4px;">BANTUSTAN BURDEN</div>'
+        '<div style="font-size:28px;font-weight:900;color:#1C1917;">' + str(bantustan_val) + '</div>'
+        '<div style="font-size:11px;color:#A8A29E;">former archives</div>'
+        '</div>'
+
+        '</div></div>'
+    )
+
+    st.markdown(card, unsafe_allow_html=True)
 
 st.markdown('<hr class="divider">', unsafe_allow_html=True)
 
