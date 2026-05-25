@@ -137,7 +137,8 @@ for _, row in df_p.iterrows():
         'Gauteng':      '⚡ NAAIRS infrastructure exists — mid-priority, system migration focus',
     }.get(row['province'], '⚠️ No confirmed digitisation infrastructure — maximum intervention needed')
 
-    special = row.get('special_risk_flag', 'None')
+    special = str(row.get('special_risk_flag', ''))
+    special = '' if special.strip() in ('', 'None', 'nan', 'NaN') else special
 
     st.markdown(f"""
 <div style="background:white; border:1px solid #E7E5E4; border-radius:10px;
@@ -167,7 +168,7 @@ for _, row in df_p.iterrows():
       </div>
       <div style="font-size:13px; color:#DC2626; margin-bottom:4px;">{urgency_note}</div>
       <div style="font-size:13px; color:#44403C;">{feasibility_note}</div>
-      {'<div style="font-size:12.5px; color:#92400E; margin-top:8px; background:#FEF3C7; padding:8px 12px; border-radius:4px;">⚠️ ' + special + '</div>' if special != 'None' else ''}
+      {'<div style="font-size:12.5px; color:#92400E; margin-top:8px; background:#FEF3C7; padding:8px 12px; border-radius:4px;">⚠️ ' + special + '</div>' if special else ''}
     </div>
     <div style="min-width:120px; text-align:right;">
       <div style="font-family:'JetBrains Mono',monospace; font-size:10px;
